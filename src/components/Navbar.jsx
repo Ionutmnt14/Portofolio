@@ -76,8 +76,28 @@ const Navbar = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="flex justify-between  items-center mx-20 my-8 bg-transparent">
+    <motion.div
+      className={`flex justify-between items-center mx-auto px-4 h-24 w-full bg-transparent transition-all duration-500 ${
+        isSticky
+          ? "fixed top-0 left-0 bg-[#22262B] z-50"
+          : "relative bg-transparent"
+      }`}
+    >
       <div>
         <motion.h1
           variants={variants}
@@ -97,7 +117,7 @@ const Navbar = () => {
       </div>
       {/* Desktop Menu */}
       <motion.div initial="initial" animate="animate" variants={variants}>
-        <ul className="md:flex hidden justify-between items-center gap-4 font-montserrat font-medium text-text">
+        <ul className="md:flex hidden p-4 justify-between items-center gap-4 font-montserrat font-medium text-text">
           {NavbarMenu.map((e) => (
             <motion.li
               whileHover={{ scale: 1.1 }}
@@ -117,14 +137,14 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
 
-      <motion.div variants={menuVariants}
-      animate={nav ? "open" : "closed"}
+      <motion.div
+        variants={menuVariants}
+        animate={nav ? "open" : "closed"}
         className={`${
           nav ? "translate-x-0" : "-translate-x-full"
         }  fixed left-0 top-0 w-[60%] h-full border-r border-e-gray-900 text-text bg-soft transform transition-transform duration-300 ease-in-out flex items-center  flex-col gap-28`}
       >
-        <motion.h1 
-        className="text-4xl font-montserrat font-bold cursor-default my-4">
+        <motion.h1 className="text-4xl font-montserrat font-bold cursor-default my-4">
           Ionut
         </motion.h1>
         <ul className="flex flex-col items-center gap-3">
@@ -141,7 +161,7 @@ const Navbar = () => {
           ))}
         </ul>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 
