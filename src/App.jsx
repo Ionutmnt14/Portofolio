@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div className="overflow-hidden">
       <Cursor />
-      <section className="bg-background">
+      <section>
         <Navbar />
         <Hero />
       </section>

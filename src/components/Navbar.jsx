@@ -12,7 +12,7 @@ const variants = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: 1,
       ease: easeOut,
     },
   },
@@ -92,10 +92,10 @@ const Navbar = () => {
 
   return (
     <motion.div
-      className={`flex justify-between items-center mx-auto px-4 h-24 w-full bg-transparent transition-all duration-500 ${
+      className={`flex font-montserrat justify-between  items-center mx-auto px-20 h-24 w-full  transition-all duration-500 ${
         isSticky
           ? "fixed top-0 left-0 bg-[#22262B] z-50"
-          : "relative bg-transparent"
+          : "relative bg-[#0d1117]"
       }`}
     >
       <div>
@@ -104,7 +104,7 @@ const Navbar = () => {
           initial="initial"
           animate="animate"
           style={{
-            background: `linear-gradient(90deg, #e6edf3, #9333ea, #1f6feb)`,
+            background: `linear-gradient(90deg, #e6edf3, #58a6ff, #1f6feb)`,
             backgroundSize: "200% 200%",
             backgroundPosition: `${gradientPosition}% 50%`,
             WebkitBackgroundClip: "text",

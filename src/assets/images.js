@@ -1,5 +1,5 @@
 import laptop from './laptop.png'
-import heroImg from './hero.png'
+import heroImg from './image.png'
 
 export {
   laptop,
