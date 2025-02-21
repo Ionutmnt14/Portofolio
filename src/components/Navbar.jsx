@@ -76,28 +76,30 @@ const Navbar = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const [isSticky, setIsSticky] = useState(false);
+  // const [isSticky, setIsSticky] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 50) {
+  //       setIsSticky(true);
+  //     } else {
+  //       setIsSticky(false);
+  //     }
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   return (
     <motion.div
-      className={`flex font-montserrat justify-between  items-center mx-auto px-20 h-24 w-full  transition-all duration-500 ${
-        isSticky
-          ? "fixed top-0 left-0 bg-[#22262B] z-50"
-          : "relative bg-[#0d1117]"
-      }`}
-    >
+      className="flex font-montserrat justify-between bg-background items-center mx-auto px-20 h-full w-full  transition-all duration-500 
+      "
+      >
+      {/* // ${
+    //   isSticky
+    //     ? "fixed top-0 left-0 bg-[#22262B] z-50"
+    //     : "relative bg-[#0d1117]"
+    // } */}
       <div>
         <motion.h1
           variants={variants}

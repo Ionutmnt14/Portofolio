@@ -9,25 +9,24 @@ import Contact from "./components/Contact";
 
 const App = () => {
   return (
-    <div className="overflow-hidden">
-      <Cursor />
-      <section>
-        <Navbar />
+    <div className="overflow-hidden snap-y snap-mandatory scroll-smooth">
+      {/* <Cursor /> */}
+      <section id="home" className=" ">
         <Hero />
       </section>
-      <section>
+      <section id="parallax1" className="w-screen h-screen">
         <Parallax1 />
       </section>
-      <section>
+      <section id="about" className="w-screen h-screen ">
         <About />
       </section>
-      <section>
+      <section id="parallax2" className="w-screen h-screen ">
         <Parallax2 />
       </section>
-      <section>
+      <section id="projects" className="w-screen h-screen ">
         <Projects />
       </section>
-      <section>
+      <section id="contact" className="w-screen h-screen ">
         <Contact />
       </section>
     </div>
@@ -35,4 +34,3 @@ const App = () => {
 };
 
 export default App;
-
