@@ -1,5 +1,5 @@
-import Cursor from "./components/Cursor";
-import Navbar from "./components/Navbar";
+// import Cursor from "./components/Cursor";
+// import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Parallax1 from "./components/Parallax1";
 import About from "./components/About";
