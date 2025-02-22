@@ -1,4 +1,4 @@
-import { heroImg } from "../assets/images";
+import { heroImg } from "../assets/images/images";
 import { FaDownload } from "react-icons/fa";
 import { LuMouse } from "react-icons/lu";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
