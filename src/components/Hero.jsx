@@ -59,7 +59,7 @@ const Hero = () => {
           className="text-text py-4 relative z-10"
         >
           <motion.h1 variants={textVariants} className="text-6xl font-medium ">
-            Hi, <span className="text-electric">I&lsquo;m</span> Ionut
+            Hi, <span className="text-electric">I’m</span> Ionut
           </motion.h1>
           <motion.h1
             variants={textVariants}

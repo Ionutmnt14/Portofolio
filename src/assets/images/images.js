@@ -4,6 +4,7 @@ import parallax1 from './parallax1.png'
 import planets from './planets.png'
 import mountains from './mountains.png'
 import stars from './stars.png'
+import about from './about.jpg'
 
 export {
   laptop,
@@ -11,5 +12,6 @@ export {
   parallax1,
   planets,
   mountains,
-  stars
+  stars,
+  about
 }
