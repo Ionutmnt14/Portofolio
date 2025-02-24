@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useInView, useScroll, useTransform } from "motion/react";
 import { planets, mountains, stars } from "../assets/images/images";
 import { useRef } from "react";
 import { react, html, css, fmotion, tailwind, js } from "../assets/icons/icons";
@@ -32,6 +32,8 @@ const Parallax1 = () => {
 
   const yText = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const refref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <div
@@ -42,16 +44,17 @@ const Parallax1 = () => {
       <div className="w-full h-full flex flex-col items-center">
         {/* Title */}
         <motion.h1
+        ref={refref}
           style={{ y: yText }}
           initial={{ opacity: 0, scale: 0.5 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.5, delay: 1 }}
           className="text-white text-8xl font-bold tracking-wider my-8"
         >
           Skills
         </motion.h1>
 
-        {/* Skills Grid */}
+    
         <motion.div
           className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-9 relative h-full items-center justify-center z-30 mx-auto mb-10"
           style={{ y: yBg }}
